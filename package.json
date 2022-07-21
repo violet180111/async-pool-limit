@@ -1,6 +1,6 @@
 {
   "name": "concurrent-limit-p",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a promise based concurrent scheduler",
   "main": "dist/bundle.browser.js",
   "module": "dist/bundle.esm.js",
