@@ -11,7 +11,7 @@
 | pCtor  |                创建 promise 的函数(Functions for creating a promise)                | function |
 | cb     | 每个 promise 成功或者失败的回调(Callback after success or failure of each promise ) | function |
 
-#Usage
+# Usage
 
 ```js
 const timeout = time => {
