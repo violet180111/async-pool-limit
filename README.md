@@ -1,6 +1,16 @@
-# Concurrent-Limit
+# async-pool-limit
 
 一个 promise 并发调度器(a promise based concurrent scheduler)
+
+# Install
+
+```txt
+npm i async-pool-limit
+or
+yarn add async-pool-limit
+or
+pnpm i async-pool-limit
+```
 
 # option
 
@@ -14,6 +24,8 @@
 # Usage
 
 ```js
+import scheduler from 'async-pool-limit';
+
 const timeout = time => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
