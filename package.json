@@ -1,5 +1,5 @@
 {
-  "name": "concurrent-limit",
+  "name": "concurrent-limit-p",
   "version": "1.0.0",
   "description": "a promise based concurrent scheduler",
   "main": "dist/bundle.browser.js",
