@@ -4,7 +4,7 @@
     "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
 
     // 输出的目录
-    "outDir": "./types" /* Redirect output structure to the directory. */,
+    "outDir": "./dist" /* Redirect output structure to the directory. */,
 
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,

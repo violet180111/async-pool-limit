@@ -3,11 +3,16 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 
+const footer = `
+if(typeof window !== 'undefined') {
+  window._Dry_VERSION_ = '${pkg.version}'
+}`;
+
 export default {
   input: './src/lib/index.ts',
   output: [
     {
-      file: pkg.main,
+      file: pkg.commonjs,
       format: 'cjs',
       footer,
     },

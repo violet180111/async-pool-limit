@@ -1,4 +1,4 @@
-import scheduler from '../lib';
+import scheduler from '../src/lib';
 
 describe('scheduler - √', () => {
   const timeout = (time: number) => {
