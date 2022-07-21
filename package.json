@@ -1,6 +1,6 @@
 {
-  "name": "concurrent-limit-p",
-  "version": "1.0.2",
+  "name": "async-pool-limit",
+  "version": "1.0.0",
   "description": "a promise based concurrent scheduler",
   "main": "dist/bundle.browser.js",
   "module": "dist/bundle.esm.js",
