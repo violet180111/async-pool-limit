@@ -1,6 +1,6 @@
 {
   "name": "async-pool-limit",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "a concurrent scheduler base on promise",
   "main": "dist/bundle.browser.js",
   "module": "dist/bundle.esm.js",
@@ -36,6 +36,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Cx330-create/concurrent-limit.git"
+    "url": "git://github.com/Cx330-create/async-pool-limit.git"
   }
 }
