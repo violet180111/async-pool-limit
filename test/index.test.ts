@@ -26,7 +26,7 @@ describe('scheduler - √', () => {
     expect(correctOutput).toEqual(finalResult);
   });
 
-  test('并发数大于源数据长度', async () => {
+  test('并发数大于或等于源数据长度', async () => {
     const times = [10, 50, 30, 20];
     const correctOutput = [10, 20, 30, 50];
     const finalResult: number[] = [];

@@ -32,7 +32,7 @@ export default function scheduler<P = any, T = any>(options: IOptions<P, T>): Pr
     execute(values[cur++]);
   }
 
-  if (limit > values.length) {
+  if (limit >= values.length) {
     return Promise.all(pool).then(final).catch(final);
   }
 
