@@ -1,7 +1,11 @@
 import type { IOptions } from './type';
 
-export default function scheduler<P = any, T = any>(options: IOptions<P, T>): Promise<string> {
-  let { limit, values, pCtor, cb, cur = 0, pool = new Set() } = options;
+export default function scheduler<P = any, T = any>(
+  options: IOptions<P, T>,
+  cur = 0,
+  pool = new Set<Promise<P>>()
+): Promise<string> {
+  let { limit, values, pCtor, cb } = options;
 
   if (!Array.isArray(values)) {
     throw new TypeError('values must be a array');
@@ -11,10 +15,10 @@ export default function scheduler<P = any, T = any>(options: IOptions<P, T>): Pr
     throw new TypeError('pCtor must be a function');
   }
 
-  const final = () => 'Tasks Ended!';
+  const next = () => scheduler(options, cur, pool);
 
   if (cur >= values.length) {
-    return pool.size ? Promise.race(pool).then(final).catch(final) : Promise.resolve('Tasks Ended!');
+    return pool.size ? Promise.race(pool).then(next).catch(next) : Promise.resolve('Tasks Ended!');
   }
 
   const execute = (v: T) => {
@@ -32,10 +36,5 @@ export default function scheduler<P = any, T = any>(options: IOptions<P, T>): Pr
     execute(values[cur++]);
   }
 
-  if (limit >= values.length) {
-    return Promise.all(pool).then(final).catch(final);
-  }
-
-  const next = () => scheduler({ ...options, cur, pool });
   return Promise.race(pool).then(next).catch(next);
 }
