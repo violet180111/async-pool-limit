@@ -38,3 +38,40 @@ export default function scheduler<P = any, T = any>(
 
   return Promise.race(pool).then(next).catch(next);
 }
+
+// export default async function* scheduler<P = any, T = any>(
+//   limit: number,
+//   values: T[],
+//   pCtor: (v: T) => Promise<P>
+// ) {
+//   if (!Array.isArray(values)) {
+//     throw new TypeError('values must be a array');
+//   }
+
+//   if (typeof pCtor !== 'function') {
+//     throw new TypeError('pCtor must be a function');
+//   }
+
+//   // ensure a safe positive integer
+//   limit = limit >>> 0 || 1;
+
+//   const set = new Set();
+
+//   for (const v of values) {
+//     const p = Promise.resolve(pCtor(v)).then(res => {
+//       set.delete(p);
+
+//       return res;
+//     });
+
+//     set.add(p);
+
+//     if (set.size >= limit) {
+//       yield await Promise.race(set);
+//     }
+//   }
+
+//   while (set.size) {
+//     yield await Promise.race(set);
+//   }
+// }
