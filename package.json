@@ -1,6 +1,6 @@
 {
   "name": "async-pool-limit",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "a concurrent scheduler base on promise",
   "main": "dist/bundle.browser.js",
   "module": "dist/bundle.esm.js",
@@ -17,11 +17,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "build:types": "tsc",
+    "build": "tsc && rollup -c",
     "test": "jest"
   },
-  "author": "7777zzz",
+  "author": "violet180111",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
@@ -38,6 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/verliter/async-pool-limit.git"
+    "url": "git://github.com/violet180111/async-pool-limit.git"
   }
 }
